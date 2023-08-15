@@ -1,8 +1,10 @@
 import * as mongodb from "mongodb";
 import { Employee } from "./employee";
+import { Student } from "./student";
  
 export const collections: {
    employees?: mongodb.Collection<Employee>;
+   students?: mongodb.Collection<Student>;
 } = {};
  
 export async function connectToDatabase(uri: string) {
@@ -13,7 +15,9 @@ export async function connectToDatabase(uri: string) {
    await applySchemaValidation(db);
  
    const employeesCollection = db.collection<Employee>("employees");
+   const studentsCollection = db.collection<Student>("students");
    collections.employees = employeesCollection;
+   collections.students = studentsCollection;
 }
  
 // Update our existing collection with JSON schema validation so we know our documents will always match the shape of our Employee model, even if added elsewhere.
@@ -43,6 +47,29 @@ async function applySchemaValidation(db: mongodb.Db) {
            },
        },
    };
+
+   const jsonStudentSchema = {
+    $jsonSchema: {
+        bsonType: "object",
+        required: ["name", "class", "phonenumber"],
+        additionalProperties: false,
+        properties: {
+            _id: {},
+            name: {
+                bsonType: "string",
+                description: "'name' is required and is a string",
+            },
+            class: {
+                bsonType: "string",
+                description: "'position' is required and is a string"
+            },
+            phonenumber: {
+                bsonType: "string",
+                description: "'phonenumber' is required and is one of 'junior', 'mid', or 'senior'",
+            },
+        },
+    },
+};
  
    // Try applying the modification to the collection, if the collection doesn't exist, create it
   await db.command({
@@ -53,4 +80,13 @@ async function applySchemaValidation(db: mongodb.Db) {
            await db.createCollection("employees", {validator: jsonSchema});
        }
    });
+
+   await db.command({
+    collMod: "students",
+    validator: jsonStudentSchema
+}).catch(async (error: mongodb.MongoServerError) => {
+    if (error.codeName === 'NamespaceNotFound') {
+        await db.createCollection("students", {validator: jsonStudentSchema});
+    }
+});
 }
