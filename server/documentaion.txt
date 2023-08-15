@@ -1,0 +1,6 @@
+RUNNING SCRIPT
+npx ts-node src/server.ts
+
+REQUIRED LIBRARY
+npm install cors dotenv express mongodb
+npm install --save-dev typescript @types/cors @types/express @types/node ts-node
