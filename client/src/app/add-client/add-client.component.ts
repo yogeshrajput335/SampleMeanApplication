@@ -19,7 +19,7 @@ export class AddClientComponent {
     this.clientService.createClient(client)
       .subscribe({
         next: () => {
-          this.router.navigate(['/client']);
+          this.router.navigate(['/clients']);
         },
         error: (error) => {
           alert("Failed to create employee");

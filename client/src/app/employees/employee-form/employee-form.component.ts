@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
-import { Employee } from '../employee';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Employee } from 'src/app/models/employee';
 
 @Component({
   selector: 'app-employee-form',
