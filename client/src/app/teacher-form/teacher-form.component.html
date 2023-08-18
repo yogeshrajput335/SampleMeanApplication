@@ -1,0 +1,47 @@
+<form class="teacher-form" autocomplete="off" [formGroup]="teacherForm" (ngSubmit)="submitForm()">
+    <div class="form-floating mb-3">
+      <input class="form-control" type="text" id="name" formControlName="name" placeholder="Name" required>
+      <label for="name">Name</label>
+    </div>
+
+    <div *ngIf="name.invalid && (name.dirty || name.touched)" class="alert alert-danger">
+      <div *ngIf="name.errors?.['required']">
+        Name is required.
+      </div>
+      <div *ngIf="name.errors?.['minlength']">
+        Name must be at least 3 characters long.
+      </div>
+    </div>
+
+    <div class="form-floating mb-3">
+        <input class="form-control" type="text" id="subject" formControlName="subject" placeholder="subject" required>
+        <label for="subject">Subject</label>
+      </div>
+  
+      <div *ngIf="subject.invalid && (subject.dirty || subject.touched)" class="alert alert-danger">
+        <div *ngIf="subject.errors?.['required']">
+          Subject is required.
+        </div>
+        <div *ngIf="subject.errors?.['minlength']">
+          Subject must be at least 3 characters long.
+        </div>
+      </div>
+
+      <div class="form-floating mb-3">
+        <input class="form-control" type="text" id="phonenumber" formControlName="phonenumber" placeholder="phonenumber" required>
+        <label for="phonenumber">phonenumber</label>
+      </div>
+  
+      <div *ngIf="phonenumber.invalid && (phonenumber.dirty || phonenumber.touched)" class="alert alert-danger">
+        <div *ngIf="name.errors?.['required']">
+          phonenumber is required.
+        </div>
+        <div *ngIf="phonenumber.errors?.['minlength']">
+          phonenumber must be 10 length long.
+        </div>
+      </div>
+
+    
+
+    <button class="btn btn-primary" type="submit" [disabled]="teacherForm.invalid">Add</button>
+  </form>

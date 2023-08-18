@@ -5,7 +5,7 @@ import { EmployeeService } from '../employee.service';
  
 @Component({
  selector: 'app-employees-list',
- templateUrl: './employees-list.component.html'
+ templateUrl: './employees-list.component.html',
 })
 export class EmployeesListComponent implements OnInit {
  employees$: Observable<Employee[]> = new Observable();
