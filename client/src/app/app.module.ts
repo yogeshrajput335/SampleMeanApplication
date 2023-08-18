@@ -9,6 +9,10 @@ import { EmployeesListComponent } from './employees-list/employees-list.componen
 import { AddEmployeeComponent } from './add-employee/add-employee.component';
 import { EditEmployeeComponent } from './edit-employee/edit-employee.component';
 import { EmployeeFormComponent } from './employee-form/employee-form.component';
+import { AddClientComponent } from './add-client/add-client.component';
+import { EditClientComponent } from './edit-client/edit-client.component';
+import { ClientFormComponent } from './client-form/client-form.component';
+import { ClientListComponent } from './client-list/client-list.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +20,11 @@ import { EmployeeFormComponent } from './employee-form/employee-form.component';
     EmployeesListComponent,
     AddEmployeeComponent,
     EditEmployeeComponent,
-    EmployeeFormComponent
+    EmployeeFormComponent,
+    AddClientComponent,
+    EditClientComponent,
+    ClientFormComponent,
+    ClientListComponent
   ],
   imports: [
     BrowserModule,
