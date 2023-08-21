@@ -10,6 +10,7 @@ import { TeacherListComponent } from './teacher-list/teacher-list.component';
 import { AddTeacherComponent } from './add-teacher/add-teacher.component';
 import {EditTeacherComponent } from './edit-teacher/edit-teacher.component';
 import { TeacherFormComponent } from './teacher-form/teacher-form.component';
+import { SampleComponent } from './prime-ng-demo/sample/sample.component';
 
 
 const routes: Routes = [
@@ -22,7 +23,8 @@ const routes: Routes = [
   { path: 'teachers/edit/:id', component: EditTeacherComponent },
   { path: 'clients', component: ClientListComponent },
   { path: 'clients/new', component: AddClientComponent }, // <-- add this line
-  { path: 'clients/edit/:id', component: EditClientComponent }
+  { path: 'clients/edit/:id', component: EditClientComponent },
+  { path: 'primeng', component: SampleComponent }
 ]; 
 
 @NgModule({
