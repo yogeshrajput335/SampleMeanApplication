@@ -6,7 +6,7 @@ import { Teacher } from '../teacher';
 
 @Component({
   selector: 'app-edit-teacher',
-  template: `./edit-teacher.component.html`,
+  templateUrl: `./edit-teacher.component.html`,
   
 })
 export class EditTeacherComponent implements OnInit {
