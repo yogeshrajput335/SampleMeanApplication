@@ -6,10 +6,10 @@ import { EditEmployeeComponent } from './employees/edit-employee/edit-employee.c
 import { ClientListComponent } from './client-list/client-list.component';
 import { AddClientComponent } from './add-client/add-client.component';
 import { EditClientComponent } from './edit-client/edit-client.component';
-import { TeacherListComponent } from './teacher-list/teacher-list.component';
-import { AddTeacherComponent } from './add-teacher/add-teacher.component';
-import {EditTeacherComponent } from './edit-teacher/edit-teacher.component';
-import { TeacherFormComponent } from './teacher-form/teacher-form.component';
+import { TeacherListComponent } from './teachers/teacher-list/teacher-list.component';
+import { AddTeacherComponent } from './teachers/add-teacher/add-teacher.component';
+import { EditTeacherComponent } from './teachers/edit-teacher/edit-teacher.component';
+import { TeacherFormComponent } from './teachers/teacher-form/teacher-form.component';
 import { SampleComponent } from './prime-ng-demo/sample/sample.component';
 
 

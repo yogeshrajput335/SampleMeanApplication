@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { BehaviorSubject } from 'rxjs';
-import { Teacher } from '../teacher';
+import { Teacher } from 'src/app/models/teacher';
 
 @Component({
   selector: 'app-teacher-form',

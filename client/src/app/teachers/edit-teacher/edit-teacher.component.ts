@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { TeacherService } from '../teacher.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { BehaviorSubject } from 'rxjs';
-import { Teacher } from '../teacher';
+import { Teacher } from 'src/app/models/teacher';
+import { TeacherService } from 'src/app/services/teacher.service';
 
 @Component({
   selector: 'app-edit-teacher',
