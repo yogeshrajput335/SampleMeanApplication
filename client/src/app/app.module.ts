@@ -14,10 +14,10 @@ import { AddClientComponent } from './add-client/add-client.component';
 import { EditClientComponent } from './edit-client/edit-client.component';
 import { ClientFormComponent } from './client-form/client-form.component';
 import { ClientListComponent } from './client-list/client-list.component';
-import { AddTeacherComponent } from './add-teacher/add-teacher.component';
-import { EditTeacherComponent } from './edit-teacher/edit-teacher.component';
-import { TeacherListComponent } from './teacher-list/teacher-list.component';
-import { TeacherFormComponent } from './teacher-form/teacher-form.component';
+import { AddTeacherComponent } from './teachers/add-teacher/add-teacher.component';
+import { EditTeacherComponent } from './teachers/edit-teacher/edit-teacher.component';
+import { TeacherListComponent } from './teachers/teacher-list/teacher-list.component';
+import { TeacherFormComponent } from './teachers/teacher-form/teacher-form.component';
 import { SampleComponent } from './prime-ng-demo/sample/sample.component';
 
 import { DropdownModule } from 'primeng/dropdown';
