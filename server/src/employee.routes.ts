@@ -7,7 +7,8 @@ employeeRouter.use(express.json());
  
 employeeRouter.get("/", async (_req, res) => {
    try {
-       const employees = await collections.employees.find({}).toArray();
+       const query = { name: { $not: { $eq: "Bhargavi" } } };
+       const employees = await collections.employees.find(query).toArray();
        res.status(200).send(employees);
    } catch (error) {
        res.status(500).send(error.message);
@@ -18,6 +19,8 @@ employeeRouter.get("/:id", async (req, res) => {
     try {
         const id = req?.params?.id;
         const query = { _id: new mongodb.ObjectId(id) };
+        //{ name: { $not: { $eq: "Andrea Le" } } }
+        //const query = { _id: new mongodb.ObjectId(id) };
         const employee = await collections.employees.findOne(query);
   
         if (employee) {
